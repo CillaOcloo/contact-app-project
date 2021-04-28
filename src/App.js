@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import  { useState } from 'react';
 import './App.css';
+import Contacts from './Components/Contacts';
+import ContactForm from './Components/ContactForm';
 
 function App() {
+
+  const [users,setState]=useState([]);
+    function handleAddContacts(user) {
+      setState([...users, user]);
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <div><ContactForm handleAddContacts={handleAddContacts} /></div>
+       <div><Contacts allUsers={users}/> </div>
     </div>
-  );
+);
 }
 
 export default App;
