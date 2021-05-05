@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(127, 212, 200);
+  }
+  
+  
+  .info {
+    width: 30%;
+    padding: 30px;
+    color: black;
+    
+  }
+  input { width: 450px;
+  border-radius: 5px;
+  padding: 10px 15px; 
+  border: 1px solid black;
+  margin: 8px 0;
+  border-radius: 5px;
+  }
+
+
+  h2 {
+    text-align: center;
+    padding: 10px; 
+  }
+  
+  
+  
+  .ContactInfo {
+    padding: 30px;
+    color: white;
+  }
+  
+  .new {
+    padding: 8px;
+   background-color: rgb(9, 44, 2);
+   border-radius: 5px;
+  
+  }
+  .remove {
+    padding: 8px;
+    background-color:rgb(177, 6, 6);
+    border-radius: 5px;
+  
+  }
+  
+  .btn {
+    width: 100px;
+    border-radius: 4px;
+    background-color: rgb(37, 36, 36);
+    color: whitesmoke;
+    
+  }
