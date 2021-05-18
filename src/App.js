@@ -28,7 +28,7 @@ function App() {
   return(
     <div className="container">
       <div className="row">
-      <h2>Contact Us</h2>
+      <h2>Contact Form</h2>
          <div className="col-md-6">
             <ContactForm  handleAddContacts={handleAddContacts}/>
      </div>
