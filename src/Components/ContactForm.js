@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import addContact from  '../action/contactActions';
 
 function ContactForms(props) {
     const [state, setState] = useState(
@@ -18,7 +20,7 @@ function ContactForms(props) {
       function handleSubmit() {
         let userId = 10000 + Math.random() * 10000000;
         let user = { ...state, id: userId };
-        props.handleAddContacts(user);
+        props.addNewContact(user);
       }
       
        
@@ -65,5 +67,6 @@ function ContactForms(props) {
              
         
     );
+   
 }
-export default ContactForms;
+export default connect(null,{addContact})(ContactForms);

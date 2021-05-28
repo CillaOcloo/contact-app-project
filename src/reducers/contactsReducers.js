@@ -1,11 +1,11 @@
 const initialState = {
     users: []
 };
-const contactsReducer =(state= 'initialState',action) => {
+const contactReducer =(state= 'initialState',action) => {
     switch(action.type) {
         case "ADD_USER":
             console.log(action.payload)
-            return {...state,contacts:[...state.users,action.payload]};
+            return {...state,contacts:[...state.contacts,action.payload]};
 
           break;
 
@@ -13,4 +13,4 @@ const contactsReducer =(state= 'initialState',action) => {
               return state;
     }
 }
-export default contactsReducer;
+export default contactReducer;
