@@ -5,21 +5,21 @@ import Contacts from './Contacts';
 function ContactList(props) {
     return(
         <div>
-             {props.allUsers.map((user) => (
+             {props.contacts.map((user) => (
         <Contacts user={user}
          delete={props.delete} 
-         updateUser={props.updateUser}
+         updateContact={props.updateContact}
         
         />
         
       ))}
-        </div>
+        </div> 
     )
 }
 function mapStateToProps(state) {
   return {
-    contactsData: state.contacts,
+    contacts: state.contacts,
   }
 }
 
-export default connect(mapStateToProps)(ContactList);
+export default connect(mapStateToProps,{})(ContactList);

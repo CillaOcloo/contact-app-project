@@ -1,8 +1,10 @@
 import React, { useState }   from 'react';
+import { connect } from 'react-redux';
+import { editContact } from '../actions/contactActions';
   
 function EditContactForm(props) {
 
-        const [state, setState] = useState({
+        const [state, userState] = useState({
           username: props.user.name,
           email: props.user.phone_number,
           password: props.user.location,
@@ -10,7 +12,7 @@ function EditContactForm(props) {
         });
       
         function handleOnChange(event) {
-          setState({
+          userState({
             ...state,
             [event.target.name]: event.target.value,
           });
@@ -18,7 +20,7 @@ function EditContactForm(props) {
       
         function handleSubmit() {
           let user  = { ...state, id: props.user.id };
-          props.updateUser(props.user.id, user);
+          props.editContact(props.user.id, user);
           props.hideModal();
         }
     return(
@@ -65,4 +67,10 @@ function EditContactForm(props) {
         
     )
 }
-export default EditContactForm;
+ let mapDispatchToProps = {
+  editContact,
+}
+let mapStateToProps=()=>{}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (EditContactForm);

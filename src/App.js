@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import Contacts from './Components/Contacts';
 import ContactForm from './Components/ContactForm';
 import ContactList from './Components/ContactList';
 
@@ -15,18 +14,18 @@ function App() {
     let newUsers = users.filter((user) => user.id !== id);
     setState(newUsers);
   }
-  function updateUser(id, updateUserInfo) {
-    let newUsers = users.map((user) => {
+  function updatedContact(id, updatedContactInfo) {
+    let newContact = users.map((user) => {
       if (user.id === id) {
-        return updateUserInfo;
+        return updatedContactInfo;
       }
       return user;
     });
-    setState(newUsers)
+    setState(newContact)
 
   }
   return(
-    <div className="container">
+    <div className="container"> ²
       <div className="row">
       <h2>Contact Form</h2>
          <div className="col-md-6">
@@ -38,7 +37,7 @@ function App() {
            <div className="col-md-6">
                <ContactList allUsers={users} 
                delete={deleteUser}
-               updateUser= {updateUser}
+               updatedContact= {updatedContact}
                />
                </div>
          </div>

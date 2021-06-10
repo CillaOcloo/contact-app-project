@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import ContactForm from './ContactForm';
 import { Modal } from 'react-bootstrap';
 import EditContactForm from './EditContactForm'; 
+import { connect } from 'react-redux';
+import { deleteContact } from '../actions/contactActions';
+
 
 
    function Contacts(props) {
@@ -30,12 +32,12 @@ import EditContactForm from './EditContactForm';
           <Modal.Body>
             <EditContactForm
             user={props.user}
-            updateUser={props.updateUser}
+            updateContact={props.updateContact}
             hideModal={hideModal}/>
           </Modal.Body>
         </Modal>
         <button className="remove" onClick={() => { 
-          props.delete(props.user.id);
+          props.deleteContact(props.user.id);
         }}
         >Delete</button>
       </div>
@@ -45,5 +47,9 @@ import EditContactForm from './EditContactForm';
     </div>
   );
 }
+let mapDispatchToProps ={
+  deleteContact,
+}
+let mapStateToProps =()=>{}
 
-export default Contacts;
+export default connect(mapStateToProps,mapDispatchToProps) (Contacts);
